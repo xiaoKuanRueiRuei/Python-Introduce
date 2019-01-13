@@ -1,0 +1,10 @@
+#Create a float number whose value is the user entering radius for his/hers circle.
+radius = float(input('Enter the radius:'))
+
+#Create a float number whose value is the user entering length of a Cylinder for his/hers circle.
+length = float(input('length of a Cylinder:'))
+
+#Print the calculate result.
+#Area for a circle is radius**2*3.14.
+#Circumference a circle is radius**2*3.14*length.
+print('The area is',radius**2*3.14,'and the volume is',radius**2*3.14*length)
