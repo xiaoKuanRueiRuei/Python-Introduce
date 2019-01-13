@@ -1,0 +1,9 @@
+#We can enter a degree in Celsius
+#We get the float number as 'Celsius'
+
+Celsius = float(input('Enter a degree in Celsius:'))
+
+#Print the transfering result
+#Fahrenheit = Celsius*1.8+32
+
+print(Celsius, 'Celsius is ' ,Celsius*1.8+32 ,'Fahrenheit')
