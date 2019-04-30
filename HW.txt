@@ -1,0 +1,6 @@
+a=float(input('Enter a degree in Celsius:'))
+print(a, 'Celsius is ' ,a*1.8+32 ,'Fahrenheit')
+
+
+x=float(input('Enter the radius and lengthof a Cylinder:'))
+a,b=[int(x for x in input().split())]

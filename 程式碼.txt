@@ -1,0 +1,402 @@
+點到點距離公式
+
+註記:
+point A(a,b) and point B(c,d)
+
+def d(a,b,c,d):
+	return ((a-c)**2+(b-d)**2)**0.5
+
+判斷是否為三角形
+
+註記:
+a,b,c為三角形三邊長
+
+def g(a,b,c):
+	if a+b<=c:
+		result="false"
+	elif b+c<=a:
+		result="false"
+	elif a+c<=b:
+		result="false"
+	else:
+		result="Ture"
+	print(result)
+
+判斷是否為三角形、正三角形、直角三角形
+
+註記:
+a,b,c為三角形三邊長
+
+def g(a,b,c):
+	if a+b<=c:
+		result="非三角形"
+	elif b+c<=a:
+		result="非三角形"
+	elif a+c<=b:
+		result="非三角形"
+	elif a**2+b**2==c**2:
+		result="直角三角形"
+	elif a**2+c**2==b**2:
+		result="直角三角形"
+	elif b**2+c**2==a**2:
+		result="直角三角形"
+	elif a==b==c:
+		result="正三角形"
+	else:
+		result="非直角與正三角形之三角形"
+	print(result)
+
+(簡短版)
+def g(a,b,c):
+	if a+b<=c and b+c<=a and a+c<=b:
+		result="非三角形"
+	elif a**2+b**2==c**2 and a**2+c**2==b**2 and b**2+c**2==a**2:
+		result="直角三角形"
+	elif a==b==c:
+		result="正三角形"
+	else:
+		result="非直角與正三角形之三角形"
+	print(result)
+
+BMI
+
+註記:
+體重單位:公斤
+身高單位:公分
+
+def bmi(w,h):
+	return w/((h/100))**2
+
+bmi=21
+if bmi<18.5
+status
+畢氏定理
+
+註記:
+a,b圍勾和股之長
+
+def f(a,b):
+	return (a**2+b**2)**0.5
+
+公式解
+
+def roots(a = 2,b = -3,c = 1):
+     d = b**2 - 4*a*c
+     r1 = (-b + d**0.5)/(2*a)
+     r2 = (-b - d**0.5)/(2*a)
+     if d > 0:
+         print('實根')
+     elif d < 0:
+         print('虛根')
+     else:
+         print('重根')
+     print('r1 =',r1)
+     print('r2 =',r2)
+
+Resistance in a parallel circuit
+串連總電阻
+(總電阻導數=其他電阻倒數和)
+
+
+R=[200,100,400,300]
+Rt=1/sum(1/x for x in R)
+Rt
+
+
+*****寫法原因*****Rt=總和(倒數電阻，從R中取出)分之一
+
+def R(a):
+     Rt=1/sum (1/x for x in a)
+     print(Rt)
+
+輸出記得加集合括號
+R([數字，數字，數字，數字])
+
+
+單利、複利
+
+單利 F=P(1+rt)
+複利 F=P(1+r)^t
+
+單利
+P=10000000
+r=5/1000
+t=20
+F=P*(1+r*t)
+
+def si (P,r,t):
+     return P*(1+r*t)
+
+複利
+P=1000000
+r=5/100/12
+t=20*12
+F=P*(1+r)**t
+
+def ci (P,r,t):
+     return P*(1+r/12)**(t*12)
+
+年、月要留意!!!所以複利要注意乘以12或除以12
+
+迴圈指令(For loop)
+Ex:(傳統指令)
+s=0(變數)
+n=10(變數)
+for i(迴圈變數) in range(1,n+1):	(range是有頭無尾的，且指整數範圍!!!例如:計算1~10，寫法是1到n+1，n=10)
+	s+=i
+
+>>>s
+55
+
+Python built-in function(Python內建功能，與上述方法同):sum
+>>>n=10
+>>>sum(x(對象，表達資料) for(形容前面對象) x(補充x的範圍) in range(1,n+1))
+55
+
+""表多數資料，[]表串列(多數資料)
+language = ['C','c++','PHP',[Java],'Pythin']
+for x in languages:
+	print(x)
+
+While loop(須自己設定條件，沒有迴圈變數)
+s=0
+n=10
+i=1
+while i <=n:
+	s+=i	(s=s+i)
+	i+=1	(i=i+1)
+(變動迴圈變數放最下面)
+>>>s
+55
+
+
+迴圈之二
+n=10
+for i in range(1,n+1):
+	print(i)
+	n=5-->即使n改成5，可是還是執行一到十，因為前面已經定義過了
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+>>>n
+5
+
+何時該用for，while?
+for適合在事先知道迴圈次數的
+while事先不知道要做幾次(例如:因式分解)
+n=360
+count(計算個數，發生幾次)=0(從0開始)
+while n%2==0:
+	n//(一個斜線是浮點數除法，兩個才是整數除法)=2
+	count+=1
+
+>>>count
+3
+
+
+
+
+
+
+import random(隨機亂數)(輸入外面套件)
+
+a=random.sample(range(100),10)(0~99中取樣10個，其中"""不"""重複取樣!!!)
+print("a =",a)
+print("a[2:5] =",a[2:5])-->編號2到編號4(不包含編號5，因為有頭沒有尾)，而此稱為"子串列(Son List)"
+print("a[:3] = ",a[:3])-->從頭(編號0)開始數到編號3，"雙引指字串，,指隔開
+print("a[-1] =",a[-1])
+print("a[-3:] =",a[-3:])-->從編號-3開始算到最後一位
+
+n=lem(a)
+m=n//2
+m(五個字碼)
+取前五個
+print[:m]
+取後五個
+print[m:]
+因為是隨機，所以沒有照順序
+
+
+篩選資料時可用
+b=[x for x in a if x <50](把a中的資料抄一部分過來，後面if則是篩選條件，亦可稱篩選指令)
+print("b =",b)
+
+
+
+
+
+>>> basket={'apple','orange','apple','pear','orange','bnana'}--->{}整理類別，去除重複資料(集合)
+>>> basket
+{'pear', 'apple', 'bnana', 'orange'}--->{}整理類別，去除重複資料(集合)
+>>> 'orange' in basket
+True
+>>> "crabgrass"in basket
+False
+
+
+大樂透
+
+import random
+
+a=set(random.sample(range(1,50),6))--->加set即串列改集合
+b=set(random.sample(range(1,50),6))
+
+print(a)
+print(b)
+
+c = a & b(聯集計算)
+print(c)
+print(sorted(c))
+print(len(c))
+
+
+
+
+tel={'jack':4098,'sape':4139}
+tel['mary']=4127
+tel
+{'jack':4098,'sape':4139,'mary':4127}
+tel['jack']
+4098
+
+'mary'in tel
+Ture
+'jack'not in tel
+False
+
+
+
+
+
+tel={'jack':'0912913558','sape':'0922933238'}
+tel['mary']='0968823409'
+
+
+#冒號後面是資料，冒號前面是key
+
+
+
+n=10
+a=[x for x in range(1,n+1)]
+b=[x**2 for x in a]
+c=[x**3 for x in a]
+
+for i in range(n):
+    print('%5d %5d %5d'%(a[i],b[i],c[i]))-->傳統排版寫法(%-->無意，只是和電腦說有資料要排版、5-->5格、-->整數、寫三次%5d是因為有三組資料，記得要'')
+
+
+
+n=10
+a=[(x,x**2,x**3)for x in range(1,n+1)]
+
+for x, y, z in a :-->如果Taple不會被誤導，則可以省略，例如本條的x,y,z其實是(x,y,z)
+    print('{:>5} {:>5} {:>5}'.format(x,y,z))-->{:>}格式字串，>是向右靠齊，5表示五格、.是表示的，例如print的format功能(例如:計概實習時的rank.eq)
+
+攝氏華氏轉換
+c=[x for x in range(50,100+1,5)]-->50表示從攝氏50度開始、100+1表示0~100因為第一碼是0，所以要加1、5表間隔5
+f=[9/5*x+32 for x in c]
+
+for x,y in zip(c,f):
+    print('{:>8.2f} {:>8.2f}'.format(x,y))-->f表浮點數
+    
+
+
+a=[1,2,3]
+b=['a','b','c']
+
+for i in range(3):
+    c.append((a[i],b[i]))-->append是把資料加在尾巴裡
+
+
+
+
+>>> s=input('input a string:')-->提示字
+input a string:Hola
+>>> s
+'Hola'
+>>> n=int(input('input an integer:'))-->字串轉型成整數
+input an integer:123
+>>> n
+123
+>>> n=float(input('input an integer:'))-->字串轉成浮點數
+input an integer:123
+>>> n
+123.0
+
+
+>>> s='       hello world            '
+>>> s.strip()--->把垃圾字元(前後空白)拿掉
+'hello world'
+
+
+
+
+
+
+s='       hello world            '
+>>> s.split()--->把資料分開來(分隔符號)
+['hello', 'world']
+
+
+
+
+[int(x)for x in input().split()]
+
+
+
+
+
+
+
+def count(a,x):
+    c=0
+    for y in a:
+        if x==y:
+            c+=1
+    return c
+#計算次數,在Python中是Building Funtions
+
+
+
+
+
+
+
+
+
+
+
+
+
+s="hello world"
+s.split()
+
+
+
+
+
+a,b=[int(x) for x in input("input two integers:").split()]
+
+
+
+
+
+a=[int(x) for x in input().split()]
+
+
+
+
+
+
+
+
+
+

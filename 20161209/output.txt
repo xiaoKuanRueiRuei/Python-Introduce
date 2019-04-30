@@ -1,0 +1,15 @@
+name = Jeremy Lin 
+total = 273 
+average = 91.00 
+name = Kobe Bryant 
+total = 255 
+average = 85.00 
+name = Michael Jordan 
+total = 260 
+average = 86.67 
+name = Larry Bird 
+total = 212 
+average = 70.67 
+name = Dirk Nowitzki 
+total = 247 
+average = 82.33 
